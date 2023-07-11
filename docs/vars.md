@@ -38,6 +38,9 @@ Some variables of note include:
 * *access_ip* - IP for other hosts to use to connect to. Often required when
   deploying from a cloud, such as OpenStack or GCE and you have separate
   public/floating and private IPs.
+* *extra_hostnames* - list of hostnames that should be appended to `/etc/hosts` entry
+  for the defined host in the inventory. *Note* care should be taken with this key, avoid
+  recreating hostnames already present in the host file.
 * *ansible_default_ipv4.address* - Not Kubespray-specific, but it is used if ip
   and access_ip are undefined
 * *ip6* - IPv6 address to use for binding services. (host var)
