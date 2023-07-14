@@ -175,10 +175,9 @@
         - services
 
 - name: reset | gather mounted kubelet dirs  # noqa 301
-  shell: set -o pipefail && mount | grep /var/lib/kubelet/ | awk '{print $3}' | tac
-  args:
+  shell:
+    cmd: set -o pipefail && mount | grep /var/lib/kubelet/ | awk '{print $3}' | tac
     executable: /bin/bash
-    warn: false
   check_mode: no
   register: mounted_dirs
   failed_when: false
